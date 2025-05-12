@@ -1,0 +1,821 @@
+/*@font-face {
+   font-family: 'arco_cyrillicregular';
+   src: url('./fonts/rco-cyrillic-webfont.woff2') format('woff2'),
+        url('./fonts/arco-cyrillic-webfont.woff') format('woff'),
+        url('./fonts/arco-cyrillic.otf') format('opentype'), 
+        url('./fonts/arco-cyrillic.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}*/
+
+@font-face {
+   font-family: "One Nine Nine Four";
+   src: url("./fonts/OneNineNineFour-Regular.woff2") format("woff2"),
+      url("./fonts/OneNineNineFour-Regular.woff") format("woff"),
+      url("./fonts/OneNineNineFour-Regular.otf") format("opentype"),
+      url("./fonts/OneNineNineFour-Outline.ttf") format("truetype");
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+* {
+   font-family: "One Nine Nine Four" !important;
+   color: #fff;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+._scale_hover {
+   transition: all 0.4s ease 0s;
+   cursor: pointer;
+}
+
+._scale_hover:hover {
+   transform: scale(1.1);
+}
+
+.networks {
+   display: flex;
+   align-items: center;
+   gap: 24px;
+}
+
+.networks a {
+   display: block;
+}
+
+.ca {
+   word-wrap: break-word;
+   word-break: break-all;
+   max-width: 100%;
+}
+
+._container {
+   max-width: 1600px;
+   padding: 0 20px;
+   margin: 0 auto;
+}
+
+.wrapper {
+   position: relative;
+   overflow: hidden;
+   min-height: 100%;
+}
+
+.alone__wrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.bg__wrap {
+   position: relative;
+}
+
+.bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+[data-copy] {
+   cursor: pointer;
+}
+
+.copied_modal {
+   position: fixed;
+   top: 50%;
+   color: #000;
+   left: 50%;
+   z-index: 100;
+   background: #fff;
+   font-family: "Knewave", system-ui;
+   padding: 10px 30px;
+   white-space: nowrap;
+   border-radius: 20px;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+   opacity: 1;
+   visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 50px;
+   padding-bottom: 66px;
+}
+
+.ca {
+   color: #fff;
+   text-align: center;
+   font-family: "One Nine Nine Four";
+   font-size: 26.892px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   letter-spacing: -1.076px;
+   text-transform: uppercase;
+   border-radius: 11.75px;
+   border: 3.323px solid #a3a3a3;
+   background: rgba(0, 0, 0, 0.2);
+   backdrop-filter: blur(5.699999809265137px);
+   padding: 7.5px 24px;
+   margin-top: 10px;
+}
+
+.title {
+   margin-bottom: 75px;
+}
+
+.mute {
+   position: absolute;
+   top: 51px;
+   right: 66px;
+}
+
+/* memes */
+
+.memes {
+   padding-top: 100px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.memes__title {
+   margin-bottom: 70px;
+}
+
+.monitor {
+   cursor: pointer;
+}
+
+.str {
+   overflow: hidden;
+   position: relative;
+   width: 100vw;
+   left: 50%;
+   transform: translate(-50%);
+   display: flex;
+   overflow: hidden;
+   margin-bottom: 80px;
+}
+
+.str__row-marque {
+   display: flex;
+   animation: row 30s linear infinite;
+   will-change: transform;
+   gap: 60px;
+}
+
+.str2 {
+   position: relative;
+   width: 100vw;
+   left: -100%;
+   transform: translate(-100%);
+   display: flex;
+}
+
+.str__row-marque2 {
+   display: flex;
+   animation: row2 30s linear infinite;
+   will-change: transform;
+   gap: 60px;
+}
+.str__item {
+   overflow: hidden;
+   margin: 5px 10px;
+}
+
+@keyframes row {
+   0% {
+      transform: translateZ(0px);
+   }
+
+   100% {
+      transform: translate3d(-100%, 0px, 0px);
+   }
+}
+
+@keyframes row2 {
+   0% {
+      transform: translateZ(0px);
+   }
+
+   100% {
+      transform: translate3d(100%, 0px, 0px);
+   }
+}
+
+.see {
+   margin-top: 120px;
+}
+
+.alone__title {
+   margin-bottom: 60px;
+}
+
+.loader__person {
+   position: absolute;
+   bottom: 75px;
+   right: 21%;
+
+   /* Центр вращения по горизонтали — середина, по вертикали — низ элемента */
+   transform-origin: center bottom;
+
+   /* Подключаем анимацию */
+   animation: sway 3s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+   0% {
+      transform: rotate(-6deg);
+   }
+   50% {
+      transform: rotate(6deg);
+   }
+   100% {
+      transform: rotate(-6deg);
+   }
+}
+
+.rotate-1 {
+   transform: rotate(-4deg);
+}
+.rotate-2 {
+   transform: rotate(-3deg);
+}
+.rotate-3 {
+   transform: rotate(-2deg);
+}
+.rotate-4 {
+   transform: rotate(-1deg);
+}
+.rotate-5 {
+   transform: rotate(-0.5deg);
+}
+.rotate-6 {
+   transform: rotate(0.5deg);
+}
+.rotate-7 {
+   transform: rotate(1deg);
+}
+.rotate-8 {
+   transform: rotate(2deg);
+}
+.rotate-9 {
+   transform: rotate(3deg);
+}
+.rotate-10 {
+   transform: rotate(4deg);
+}
+
+/* chart */
+
+.chart {
+   padding-top: 240px;
+}
+
+.chart__person {
+   position: relative;
+   z-index: 2; /* как вы просили */
+   overflow: visible;
+}
+
+/* Статичные положения ваших рук */
+.not-hand {
+   position: absolute;
+   bottom: 174px;
+   left: 57px;
+   z-index: 3; /* чтобы всегда была над background */
+}
+
+.hand {
+   position: absolute;
+   bottom: 246px;
+   right: -30%;
+   opacity: 0; /* скрыта пока не летит */
+   z-index: 3;
+}
+
+.chart__content {
+   display: flex;
+}
+
+.chart__button {
+   width: max-content;
+}
+
+.chart__number {
+   color: #fff;
+   text-align: center;
+   -webkit-text-stroke-width: 7.3px;
+   -webkit-text-stroke-color: #000;
+   font-family: "One Nine Nine Four";
+   font-size: 80.298px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   letter-spacing: -3.212px;
+   text-transform: uppercase;
+   position: absolute;
+   top: 45%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 2;
+   white-space: nowrap;
+}
+
+.chart__button {
+   position: absolute;
+   left: 50%;
+   bottom: 100px;
+   transform: translateX(-50%);
+   transition: all 0.3s ease;
+   cursor: pointer;
+}
+
+.chart__button:hover {
+   transform: translateX(-50%) scale(1.1);
+}
+
+.candles {
+   position: absolute;
+   left: 13%;
+   top: 10%;
+   width: 600px;
+   height: 450px;
+   overflow: hidden; /* обязательно! */
+}
+
+.candles .inner {
+   position: relative;
+   width: max-content;
+   height: 100%;
+   transition: transform 0.3s ease;
+}
+
+.candle {
+   position: absolute;
+   width: 16.5px;
+   background: #00ff04;
+   transform: rotate(0.8deg);
+   border-radius: 2px;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+   transition: all 0.3s ease;
+}
+
+@media (max-width: 1700px) {
+   .chart__person {
+      width: 500px;
+   }
+}
+
+@media (max-width: 1600px) {
+   .alone__title {
+      width: 95vw;
+   }
+   .loader__person {
+      width: 11.5vw;
+   }
+}
+
+@media (max-width: 1400px) {
+   .title {
+      width: 95vw;
+   }
+   .str__item img {
+      width: 300px;
+   }
+   .alone__button img {
+      width: 400px;
+   }
+   .monitor {
+      width: 800px;
+   }
+   .chart__button img {
+      width: 400px;
+   }
+   .chart__number {
+      font-size: 60px;
+      letter-spacing: 0px;
+   }
+   .person {
+      width: 500px;
+   }
+   .not-hand {
+      width: 250px;
+   }
+   .hand {
+      width: 260px;
+   }
+   .candles {
+      width: 450px;
+      height: 350px;
+   }
+}
+
+@media (max-width: 1200px) {
+   .chart__person {
+      margin-right: -150px;
+   }
+}
+
+@media (max-width: 1120px) {
+   .memes__title {
+      width: 90vw;
+   }
+}
+
+@media (max-width: 900px) {
+   .person {
+      width: 300px;
+   }
+   .chart__person {
+      width: max-content;
+      height: max-content;
+   }
+   .not-hand {
+      width: 100px;
+      bottom: 3%;
+   }
+   .hand {
+      width: 120px;
+      bottom: 10%;
+      right: -15%;
+   }
+   .monitor {
+      width: 600px;
+   }
+   .chart__button img {
+      width: 200px;
+   }
+   .chart__number {
+      color: #fff;
+      text-align: center;
+      -webkit-text-stroke-width: 2.72px;
+      -webkit-text-stroke-color: #000;
+      font-family: "One Nine Nine Four";
+      font-size: 29.921px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -1.197px;
+      text-transform: uppercase;
+   }
+   .candles {
+      width: 300px;
+      height: 200px;
+      left: 30%;
+      top: 15%;
+   }
+}
+
+.show-768 {
+   display: none !important;
+}
+
+@media (max-width: 768px) {
+   .show-768 {
+      display: flex !important;
+   }
+   .hide-768 {
+      display: none;
+   }
+   .str__item img {
+      width: 250px;
+   }
+   .networks img {
+      width: 50px;
+   }
+   .mute {
+      position: relative;
+      top: 0;
+      left: 0;
+   }
+   .mute img {
+      width: 50px;
+   }
+   .button {
+      width: 350px;
+   }
+   .title {
+      margin-top: 111px;
+      margin-bottom: 90px;
+   }
+   .alone__button img {
+      width: 250px;
+   }
+}
+
+@media (max-width: 550px) {
+   .see img {
+      width: 286px;
+   }
+   .str__item img {
+      width: 136px;
+   }
+   .str__row-marque,
+   .str__row-marque2 {
+      gap: 0px;
+   }
+   .str {
+      margin-bottom: 10px;
+   }
+   .see {
+      margin-top: 30px;
+   }
+   .memes__title {
+      margin-bottom: 35px;
+   }
+   .candles {
+      left: 20%;
+   }
+   .person {
+      width: 180px;
+   }
+   .not-hand {
+      width: 70px;
+   }
+   .hand {
+      width: 70px;
+   }
+   .chart__person {
+      margin-top: 100px;
+   }
+   .monitor {
+      width: 95vw;
+   }
+   .candles {
+      left: 35%;
+      top: 15%;
+   }
+}
+
+@media (max-width: 500px) {
+   .candles {
+      width: 250px;
+      height: 180px;
+      left: 35%;
+      top: 15%;
+   }
+   .chart__button {
+      bottom: 40px;
+   }
+}
+
+.show-460 {
+   display: none;
+}
+
+@media (max-width: 460px) {
+   .hide-460 {
+      display: none;
+   }
+   .show-460 {
+      display: flex;
+   }
+   .button {
+      width: 260px;
+   }
+   .ca {
+      padding: 3px 20px;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: -0.458px;
+      text-transform: uppercase;
+   }
+   .networks {
+      gap: 12px;
+   }
+   .networks img {
+      width: 40px;
+   }
+   .candles {
+      height: 150px;
+      width: 200px;
+   }
+   .person {
+      width: 120px;
+   }
+   .hand {
+      width: 50px;
+   }
+   .not-hand {
+      width: 50px;
+   }
+   .chart__person {
+      margin-right: -100px;
+   }
+}
+
+@media (max-width: 390px) {
+   .chart__button img {
+      width: 150px;
+   }
+   .chart__number {
+      font-size: 24px;
+   }
+   .candles {
+      height: 120px;
+      left: 30%;
+   }
+}
+
+[data-anim-on-scroll] {
+   transition: all 0.4s ease 0s;
+   opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+   opacity: 1;
+}
+
+._right_anim_tr {
+   transform: translateX(200%);
+}
+
+._left_anim_tr {
+   transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+   transform: translateX(0%);
+}
+
+._bottom_anim_tr {
+   transform: translateY(200%);
+}
+
+._top_anim_tr {
+   transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+   transform: translateY(0%);
+}
+
+._scale_anim {
+   transform: scale(0);
+}
+
+._scale_anim._animate {
+   transform: scale(1);
+}
+
+.anim {
+   animation: anim 5s ease-in-out infinite;
+}
+
+@keyframes anim {
+   0%,
+   100% {
+      transform: scale(1);
+   }
+
+   50% {
+      transform: scale(1.04);
+   }
+}
+
+.button_anim {
+   animation: button_anim 3s ease-in-out infinite;
+}
+
+@keyframes button_anim {
+   0%,
+   100% {
+      transform: scale(1);
+   }
+
+   50% {
+      transform: scale(1.07);
+   }
+}
+
+/*.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}
+
+.card {
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+   animation: none;
+   transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-left {
+   transform: translateX(-200%);
+}
+
+.card-right {
+   transform: translateX(200%);
+}
+
+.card._animate {
+   transform: translateX(0%);
+}
+
+.card:hover, .uniq:hover {
+   transform: translateX(0%) scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq {
+   transform: scale(0);
+   opacity: 0;
+   visibility: hidden; 
+   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.uniq:hover {
+   transform: scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq._animate {
+   transform: scale(1);
+   opacity: 1; 
+   visibility: visible;
+}*/

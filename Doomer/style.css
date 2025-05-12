@@ -1,0 +1,662 @@
+@font-face {
+   font-family: "Acid";
+   src: url("./fonts/Acid\ TM.woff2") format("woff2"), url("./fonts/Acid TM.otf") format("opentype"),
+      url("./fonts/Acid TM.ttf") format("truetype");
+   font-weight: normal;
+   font-style: normal;
+}
+
+* {
+   font-family: "Acid", serif !important;
+   color: #fff;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+._scale_hover {
+   transition: all 0.4s ease 0s;
+   cursor: pointer;
+}
+
+._scale_hover:hover {
+   transform: scale(1.1);
+}
+
+.networks {
+   display: flex;
+   align-items: center;
+   gap: 24px;
+}
+
+.networks a {
+   display: block;
+}
+
+.ca {
+   word-wrap: break-word;
+   word-break: break-all;
+   max-width: 100%;
+   color: #cddddf;
+   text-align: center;
+   font-family: "Acid TM";
+   font-size: 28.768px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   text-transform: uppercase;
+}
+
+._container {
+   max-width: 1600px;
+   padding: 0 20px;
+   margin: 0 auto;
+}
+
+.wrapper {
+   position: relative;
+   overflow-y: auto;
+   min-height: 100%;
+}
+
+.show-650 {
+   display: none !important;
+}
+
+@media (min-width: 650px) and (max-height: 1080px) {
+   .wrapper {
+      min-height: 1080px;
+   }
+}
+
+.bg__wrap {
+   position: relative;
+}
+
+.bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+[data-copy] {
+   cursor: pointer;
+}
+
+.copied_modal {
+   position: fixed;
+   top: 50%;
+   color: #000;
+   left: 50%;
+   z-index: 100;
+   background: #fff;
+   font-family: "Knewave", system-ui;
+   padding: 10px 30px;
+   white-space: nowrap;
+   border-radius: 20px;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+   opacity: 1;
+   visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   min-height: 100%;
+   justify-content: center;
+   position: relative;
+   margin-top: 15px;
+}
+
+.title {
+   cursor: pointer;
+   margin-bottom: 100px;
+}
+
+.copy_ca,
+.ca {
+   position: relative;
+   z-index: 2;
+}
+
+.copy_ca {
+   position: absolute;
+   bottom: 17%;
+   left: 35%;
+   transform: rotate(-38.076deg);
+}
+
+.ca {
+   position: absolute;
+   bottom: 18%;
+   left: 35%;
+   transform: rotate(-40.076deg);
+}
+
+.person {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   transform-origin: 50% 100%;
+   animation: person-rock 5s ease-in-out 0.5s infinite alternate;
+}
+
+@keyframes person-rock {
+   0% {
+      transform: translate(-50%, -50%) rotate(-5deg);
+   }
+   50% {
+      transform: translate(-50%, -50%) rotate(5deg);
+   }
+   100% {
+      transform: translate(-50%, -50%) rotate(-5deg);
+   }
+}
+
+.sound-toggle {
+   cursor: pointer;
+   position: fixed;
+   top: 30px;
+   left: 40px;
+   z-index: 100;
+   transition: transform 0.2s ease;
+}
+
+.sound-toggle:hover {
+   transform: scale(1.1);
+}
+
+.doomer {
+   position: absolute;
+   top: 86px;
+   left: 58%;
+   z-index: 100;
+}
+
+.tg {
+   position: absolute;
+   top: 224px;
+   left: 65%;
+}
+
+.x {
+   position: absolute;
+   top: 70px;
+   left: 75%;
+}
+
+.meme {
+   right: 40px;
+   position: absolute;
+   top: 30%;
+}
+
+@media (min-width: 2000px) {
+   .ca {
+      bottom: 17%;
+      left: 41%;
+   }
+   .copy_ca {
+      bottom: 17%;
+      left: 42%;
+   }
+   .person {
+      top: 54%;
+   }
+}
+
+/* 1) Качаем всю лампу вместе со светом */
+.lamp__wrapper {
+   position: absolute;
+   top: 0;
+   left: 40%; /* как у вас было */
+   transform-origin: 50% 0; /* точка качания — середина верхнего края */
+   animation: lamp-swing 4s ease-in-out infinite alternate;
+}
+
+/* сам маятник: от −4° до +4° */
+@keyframes lamp-swing {
+   0% {
+      transform: rotate(-7deg);
+   }
+   100% {
+      transform: rotate(7deg);
+   }
+}
+
+/* 2) Мигающий свет внутри */
+.lamp_light {
+   position: absolute;
+   top: 0;
+   left: -277.5%; /* сохраняем вашу позицию внутри wrapper */
+   animation: lamp-flicker 3s steps(2, end) infinite;
+}
+
+@keyframes lamp-flicker {
+   /* steps(2) даёт резкое переключение, как лампочка моргает */
+   0%,
+   20% {
+      opacity: 0.2;
+   }
+   21%,
+   40% {
+      opacity: 1;
+   }
+   41%,
+   60% {
+      opacity: 0.3;
+   }
+   61%,
+   80% {
+      opacity: 0.8;
+   }
+   81%,
+   100% {
+      opacity: 0.2;
+   }
+}
+
+.door_light {
+   position: absolute;
+   top: 0;
+   left: 0;
+   /* включаем анимацию */
+   animation: door-flicker 10s infinite;
+}
+
+/* ключевые кадры «мерцания» */
+@keyframes door-flicker {
+   0% {
+      opacity: 0.2;
+   }
+   10% {
+      opacity: 0.42;
+   }
+   20% {
+      opacity: 0.3;
+   }
+   30% {
+      opacity: 0.6;
+   }
+   40% {
+      opacity: 0.1;
+   }
+   50% {
+      opacity: 0.18;
+   }
+   60% {
+      opacity: 0.25;
+   }
+   70% {
+      opacity: 0.35;
+   }
+   80% {
+      opacity: 0.23;
+   }
+   90% {
+      opacity: 0.4;
+   }
+   100% {
+      opacity: 0.2;
+   }
+}
+
+.tv {
+   position: absolute;
+   top: 45.5%;
+   left: 25.2%;
+   cursor: pointer;
+   width: 12vw;
+}
+
+/* класс, который будет «гасить» любые элементы */
+.dimmed {
+   opacity: 0.3;
+   transition: opacity 0.3s ease;
+}
+
+@media (max-width: 2150px) {
+   .tv {
+      width: 11.6vw;
+      top: 46.5%;
+   }
+}
+
+@media (max-width: 1900px) {
+   .tv {
+      width: 232px;
+      top: 47%;
+      left: 25%;
+   }
+}
+
+@media (max-width: 1450px) {
+   .door_light {
+      display: none;
+   }
+   .doomer img {
+      width: 140px;
+   }
+   .tg img {
+      width: 90px;
+   }
+   .meme img {
+      width: 130px;
+   }
+   .x img {
+      width: 120px;
+   }
+   .x {
+      left: 87%;
+   }
+   .tg {
+      left: 80%;
+   }
+   .doomer {
+      left: 70%;
+   }
+   .meme {
+      right: 1%;
+   }
+}
+
+@media (max-width: 850px) {
+   .copy_ca {
+      bottom: 20%;
+      left: 30%;
+   }
+   .x {
+      left: 82%;
+   }
+   .meme {
+      right: 4%;
+      top: 35%;
+   }
+}
+
+@media (max-height: 640px) {
+   .wrapper {
+      min-height: 640px;
+   }
+}
+
+@media (max-width: 650px) {
+   .show-650 {
+      display: flex !important;
+   }
+   .hide-650 {
+      display: none;
+   }
+   .copy_ca {
+      display: none;
+   }
+   .social {
+      display: none;
+   }
+   .tv {
+      width: 22.46vw;
+      top: 60%;
+      left: 33.2%;
+   }
+   .person {
+      width: 180px;
+      left: 80%;
+      top: 67%;
+   }
+   .sound-toggle {
+      top: 90%;
+      width: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+   .sound-toggle:hover {
+      transform: translateX(-50%) scale(1.1);
+   }
+   .lamp {
+      width: 50px;
+      top: 0;
+      left: 0;
+   }
+   .lamp__wrapper {
+      left: 10%;
+   }
+   .lamp_light {
+      width: 350px;
+   }
+   .copymb {
+      margin-top: 15px;
+   }
+   .camb {
+      color: #cddddf;
+      text-align: center;
+      font-family: "Acid TM";
+      font-size: 14.252px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: uppercase;
+      margin-top: 7px;
+   }
+}
+
+@media (max-width: 550px) {
+   .tv {
+      top: 58.2%;
+   }
+}
+
+@media (max-width: 500px) {
+   .person {
+      width: 130px;
+      top: 66%;
+   }
+}
+
+@media (max-width: 475px) {
+   .tv {
+      width: 107px;
+      top: 57.2%;
+   }
+}
+
+@media (max-width: 400px) {
+   .person {
+      width: 100px;
+      top: 61%;
+   }
+   .title {
+      width: 97vw;
+   }
+   .tv {
+      left: 30.2%;
+   }
+}
+
+@media (max-width: 360px) {
+   .tv {
+      left: 28.2%;
+   }
+}
+
+@media (max-width: 320px) {
+   .tv {
+      left: 25.2%;
+   }
+}
+
+[data-anim-on-scroll] {
+   transition: all 0.4s ease 0s;
+   opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+   opacity: 1;
+}
+
+._right_anim_tr {
+   transform: translateX(200%);
+}
+
+._left_anim_tr {
+   transform: translateX(-200%);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+   transform: translateX(0%);
+}
+
+._bottom_anim_tr {
+   transform: translateY(200%);
+}
+
+._top_anim_tr {
+   transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+   transform: translateY(0%);
+}
+
+._scale_anim {
+   transform: scale(0);
+}
+
+._scale_anim._animate {
+   transform: scale(1);
+}
+
+.anim {
+   animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+   0%,
+   100% {
+      transform: scale(1);
+   }
+
+   50% {
+      transform: scale(1.5);
+   }
+}
+
+/*.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}
+
+.card {
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+   animation: none;
+   transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-left {
+   transform: translateX(-200%);
+}
+
+.card-right {
+   transform: translateX(200%);
+}
+
+.card._animate {
+   transform: translateX(0%);
+}
+
+.card:hover, .uniq:hover {
+   transform: translateX(0%) scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq {
+   transform: scale(0);
+   opacity: 0;
+   visibility: hidden; 
+   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.uniq:hover {
+   transform: scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq._animate {
+   transform: scale(1);
+   opacity: 1; 
+   visibility: visible;
+}*/

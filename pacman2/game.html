@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)https://pep-man.com/ -->
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script async="" src="./files/js"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag() {
+            dataLayer.push(arguments);
+         }
+         gtag("js", new Date());
+
+         gtag("config", "UA-142539004-1");
+      </script>
+      <script src="./files/app.js"></script>
+      <!--<link rel="shortcut icon" type="image/x-icon" href="./app/style/graphics/extra_life.png">-->
+      <link href="./files/css" rel="stylesheet" />
+      <link href="./files/icon.css" rel="stylesheet" />
+      <title>Cec Man</title>
+      <link href="./files/app.css" rel="stylesheet" />
+      <link rel="stylesheet" href="./style.css" />
+   </head>
+
+   <body>
+      <div id="overflow-mask" class="overflow-mask">
+         <img id="backdrop" class="backdrop" src="./files/backdrop.png" />
+
+         <div id="fps-display" class="fps-display"></div>
+         <div id="preload-div" class="preload-div">
+            <img src="./files/arrow_down.svg" /><img src="./files/arrow_left.svg" /><img
+               src="./files/arrow_right.svg"
+            /><img src="./files/arrow_up.svg" /><img src="./files/pacman_death.svg" /><img
+               src="./files/pacman_error.svg"
+            /><img src="./files/pacman_down.svg" /><img src="./files/pacman_left.svg" /><img
+               src="./files/pacman_right.svg"
+            /><img src="./files/pacman_up.svg" /><img src="./files/blinky_down_angry.svg" /><img
+               src="./files/blinky_down_annoyed.svg"
+            /><img src="./files/blinky_down.svg" /><img src="./files/blinky_left_angry.svg" /><img
+               src="./files/blinky_left_annoyed.svg"
+            /><img src="./files/blinky_left.svg" /><img src="./files/blinky_right_angry.svg" /><img
+               src="./files/blinky_right_annoyed.svg"
+            /><img src="./files/blinky_right.svg" /><img src="./files/blinky_up_angry.svg" /><img
+               src="./files/blinky_up_annoyed.svg"
+            /><img src="./files/blinky_up.svg" /><img src="./files/clyde_down.svg" /><img
+               src="./files/clyde_left.svg"
+            /><img src="./files/clyde_right.svg" /><img src="./files/clyde_up.svg" /><img
+               src="./files/inky_down.svg"
+            /><img src="./files/inky_left.svg" /><img src="./files/inky_right.svg" /><img
+               src="./files/inky_up.svg"
+            /><img src="./files/pinky_down.svg" /><img src="./files/pinky_left.svg" /><img
+               src="./files/pinky_right.svg"
+            /><img src="./files/pinky_up.svg" /><img src="./files/eyes_down.svg" /><img
+               src="./files/eyes_left.svg"
+            /><img src="./files/eyes_right.svg" /><img src="./files/eyes_up.svg" /><img
+               src="./files/scared_blue.svg"
+            /><img src="./files/scared_white.svg" /><img src="./files/pacdot.svg" /><img
+               src="./files/powerPellet.svg"
+            /><img src="./files/apple.svg" /><img src="./files/bell.svg" /><img src="./files/cherry.svg" /><img
+               src="./files/galaxian.svg"
+            /><img src="./files/key.svg" /><img src="./files/melon.svg" /><img src="./files/orange.svg" /><img
+               src="./files/strawberry.svg"
+            /><img src="./files/ready.svg" /><img src="./files/100.svg" /><img src="./files/200.svg" /><img
+               src="./files/300.svg"
+            /><img src="./files/400.svg" /><img src="./files/500.svg" /><img src="./files/700.svg" /><img
+               src="./files/800.svg"
+            /><img src="./files/1000.svg" /><img src="./files/1600.svg" /><img src="./files/2000.svg" /><img
+               src="./files/3000.svg"
+            /><img src="./files/5000.svg" /><img src="./files/maze_blue.svg" /><img
+               src="./files/extra_life.png"
+            /><audio preload="auto" src="app/style/audio/game_start.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/pause.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/pause_beat.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/siren_1.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/siren_2.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/siren_3.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/power_up.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/extra_life.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/eyes.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/eat_ghost.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/death.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/fruit.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/dot_1.mp3"></audio
+            ><audio preload="auto" src="app/style/audio/dot_2.mp3"></audio>
+         </div>
+
+         <div id="main-menu-container" class="main-menu-container" style="opacity: 1; visibility: visible">
+            <section class="first-section hide-750">
+               <img src="./images/first-section__bg.png" alt="" class="first-section__bg" />
+               <div class="first-section__left">
+                  <img src="./images/first-section__left_bg.png" alt="" class="first-section__left_bg" />
+                  <div class="first__content">
+                     <img src="./images/first__title.png" alt="" class="first__title" />
+                     <p class="first__text">
+                        Gecky - inspired by the character Matt Furie. His goal is to lead the Matt Furie's meta on
+                        Solana. The Next Boom of 'The Night Riders'
+                     </p>
+                     <p class="first__number">0x000000000000000000000000000</p>
+                     <div class="networks">
+                        <a href="tg" class="_scale_hover">
+                           <img src="./images/tg.svg" alt="" />
+                        </a>
+                        <a href="x" class="_scale_hover">
+                           <img src="./images/x.svg" alt="" />
+                        </a>
+                        <a href="six" class="_scale_hover">
+                           <img src="./images/six.png" alt="" />
+                        </a>
+                        <a href="orel" class="_scale_hover">
+                           <img src="./images/orel.png" alt="" />
+                        </a>
+                     </div>
+                     <a href="buy" class="buy-btn _scale_hover">
+                        <img src="./images/buy.png" alt="" />
+                     </a>
+                  </div>
+               </div>
+            </section>
+            <section class="first-section-mobile show-750">
+               <img src="./images/first-section-mobile.png" alt="" class="first-section-mobile__image" />
+               <div class="first__content">
+                  <img src="./images/first__title.png" alt="" class="first__title" />
+                  <p class="first__text">
+                     Gecky - inspired by the character Matt Furie. His goal is to lead the Matt Furie's meta on Solana.
+                     The Next Boom of 'The Night Riders'
+                  </p>
+                  <p class="first__number">0x000000000000000000000000000</p>
+                  <div class="networks">
+                     <a href="tg" class="_scale_hover">
+                        <img src="./images/tg.svg" alt="" />
+                     </a>
+                     <a href="x" class="_scale_hover">
+                        <img src="./images/x.svg" alt="" />
+                     </a>
+                     <a href="six" class="_scale_hover">
+                        <img src="./images/six.png" alt="" />
+                     </a>
+                     <a href="orel" class="_scale_hover">
+                        <img src="./images/orel.png" alt="" />
+                     </a>
+                  </div>
+                  <a href="buy" class="buy-btn _scale_hover">
+                     <img src="./images/buy.png" alt="" />
+                  </a>
+               </div>
+            </section>
+            <section class="second">
+               <img src="./images/second__bg.png" alt="" class="second__bg hide-750" />
+               <img src="./images/second__bg_mobile.png" alt="" class="second__bg show-750" />
+               <button id="game-start" class="second__content _scale_hover">
+                  <img src="./images/second__gamepad.png" alt="" class="second__gamepad hide-750" />
+                  <img src="./images/second__gamepad_mobile.png" alt="" class="second__gamepad show-750" />
+               </button>
+            </section>
+         </div>
+
+         <div class="header-buttons">
+            <button>
+               <i id="pause-button" class="material-icons"> pause </i>
+            </button>
+            <button>
+               <i id="sound-button" class="material-icons"></i>
+            </button>
+         </div>
+
+         <div id="paused-text" class="paused-text">PAUSED</div>
+
+         <div id="game-ui" class="game-ui">
+            <img src="./images/bottom-row__title.png" alt="" class="bottom-row__title" />
+            <div id="row-top" class="row top">
+               <div class="column _25">
+                  <div class="one-up">1UP</div>
+                  <div id="points-display"></div>
+               </div>
+               <div class="column _50">
+                  <div>HIGH SCORE</div>
+                  <div id="high-score-display"></div>
+               </div>
+            </div>
+
+            <div class="game__wrap">
+               <img src="./images/game_wrap.png" alt="" class="game__wrap_bg" />
+               <div id="maze" class="maze">
+                  <img id="maze-img" class="maze-img" src="./files/maze_yellow.png" />
+                  <div id="maze-cover" class="maze-cover"></div>
+                  <div id="dot-container"></div>
+                  <p id="pacman" class="pacman"></p>
+                  <p id="pacman-arrow" class="pacman"></p>
+                  <p id="clyde" class="ghost"></p>
+                  <p id="inky" class="ghost"></p>
+                  <p id="pinky" class="ghost"></p>
+                  <p id="blinky" class="ghost"></p>
+               </div>
+
+               <div id="bottom-row" class="row bottom">
+                  <div id="extra-lives" class="extra-lives"></div>
+                  <div id="fruit-display" class="fruit-display"></div>
+               </div>
+            </div>
+         </div>
+
+         <div id="movement-buttons" class="movement-buttons">
+            <div class="row">
+               <button id="button-up" class="button-up">
+                  <i class="material-icons">keyboard_arrow_up</i>
+               </button>
+            </div>
+            <div class="row">
+               <button id="button-left" class="button-left">
+                  <i class="material-icons">keyboard_arrow_left</i>
+               </button>
+               <button id="button-right" class="button-right">
+                  <i class="material-icons">keyboard_arrow_right</i>
+               </button>
+            </div>
+            <div class="row">
+               <button id="button-down" class="button-down">
+                  <i class="material-icons">keyboard_arrow_down</i>
+               </button>
+            </div>
+         </div>
+
+         <div id="left-cover" class="loading-cover left"></div>
+         <div id="right-cover" class="loading-cover right"></div>
+
+         <div id="error-message" class="error-message">
+            <div class="header">
+               <div>OOPS!</div>
+               <div class="error-pacman"></div>
+            </div>
+            <div class="body">
+               We were unable to load the images/sounds needed to play the game.<br /><br />
+
+               This could be due to a poor connection, a strict network policy, or by playing on an unsupported browser.
+            </div>
+         </div>
+
+         <script>
+            window.onload = () => {
+               let gameCoordinator = new GameCoordinator();
+            };
+         </script>
+      </div>
+   </body>
+</html>

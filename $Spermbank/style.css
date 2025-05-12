@@ -1,0 +1,821 @@
+/*@font-face {
+   font-family: 'arco_cyrillicregular';
+   src: url('./fonts/rco-cyrillic-webfont.woff2') format('woff2'),
+        url('./fonts/arco-cyrillic-webfont.woff') format('woff'),
+        url('./fonts/arco-cyrillic.otf') format('opentype'), 
+        url('./fonts/arco-cyrillic.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}*/
+
+* {
+   font-family: "Rubik", sans-serif !important;
+   color: #f78c18;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+._scale_hover {
+   transition: all 0.4s ease 0s;
+   cursor: pointer;
+}
+
+._scale_hover:hover {
+   transform: scale(1.1);
+}
+
+.networks {
+   display: flex;
+   align-items: center;
+   gap: 46px;
+}
+
+.networks a {
+   display: block;
+}
+
+.ca {
+   word-wrap: break-word;
+   word-break: break-all;
+   max-width: 100%;
+}
+
+._container {
+   max-width: 1600px;
+   padding: 0 20px;
+   margin: 0 auto;
+}
+
+.wrapper {
+   position: relative;
+   overflow: hidden;
+   min-height: 100%;
+}
+
+.bg__wrap {
+   position: relative;
+}
+
+.bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+[data-copy] {
+   cursor: pointer;
+}
+
+.copied_modal {
+   position: fixed;
+   top: 50%;
+   color: #000;
+   left: 50%;
+   z-index: 100;
+   background: #fff;
+   font-family: "Knewave", system-ui;
+   padding: 10px 30px;
+   white-space: nowrap;
+   border-radius: 20px;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.4s ease 0s;
+}
+
+.copied_modal._show {
+   opacity: 1;
+   visibility: visible;
+}
+
+.content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.info {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.info__title {
+   color: #f78c18;
+   text-align: center;
+   font-family: Rubik;
+   font-size: 60px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+   margin-bottom: 20px;
+}
+
+.info__text {
+   max-width: 1030px;
+   color: rgba(16, 16, 16, 0.5);
+   text-align: center;
+   font-family: Rubik;
+   font-size: 29.851px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+}
+
+.ca {
+   color: #f78c18;
+   font-family: Rubik;
+   font-size: 29.851px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   border-radius: 20px;
+   border: 3px solid #f78c18;
+   padding: 14px 32px;
+   margin-bottom: 28px;
+   margin-top: 10px;
+}
+
+/* model */
+
+.model {
+   padding-top: 122px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.model__subtitle {
+   color: #f78c18;
+   text-align: center;
+   font-family: Rubik;
+   font-size: 60px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 1;
+}
+
+.model__title {
+   color: #f78c18;
+   text-align: center;
+   font-family: Rubik;
+   font-size: 81.127px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 1;
+}
+
+.model__cards {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   padding: 32px;
+   gap: 46px;
+   border-radius: 95px;
+   background: linear-gradient(180deg, #fff 0%, #f78c18 99.92%);
+   margin-top: 36px;
+}
+
+.model__text {
+   color: rgba(16, 16, 16, 0.5);
+   text-align: center;
+   font-family: Rubik;
+   font-size: 29.851px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   max-width: 1030px;
+   text-align: center;
+   margin-top: 30px;
+}
+
+.model__card {
+   padding: 48px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 40px;
+   border-radius: 73px;
+   background: #fffef1;
+}
+
+.card__text {
+   color: #f78c18;
+   font-family: Rubik;
+   font-size: 29.851px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}
+
+/* ===================== */
+/* CALCULATOR STYLES     */
+/* ===================== */
+
+.calculator__block {
+   margin-top: 130px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.calculator {
+   margin-top: 10px;
+   margin-bottom: 30px;
+   padding: 32px;
+   width: 100%;
+   border: 2px solid #ffa500;
+   border-radius: 20px;
+   max-width: 1500px;
+   background: rgba(255, 255, 255, 0.05);
+}
+
+.calculator__title {
+   color: #f78c18;
+   text-align: center;
+   font-family: Rubik;
+   font-size: 98.028px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: normal;
+}
+
+.calculator__body {
+   display: flex;
+   flex-direction: column;
+}
+
+.calculator__row {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid rgba(247, 140, 24, 0.2);
+   padding: 46px 0;
+}
+
+.calculator__body > .calculator__row:first-child {
+   padding-top: 0;
+}
+
+/* Убираем нижний паддинг и бордер у последней строки */
+.calculator__body > .calculator__row:last-child {
+   padding-bottom: 0;
+   border-bottom: none;
+}
+
+.calculator__row:last-child {
+   border-bottom: none;
+}
+
+.calculator__row label {
+   color: #383838;
+   font-family: Rubik;
+   font-size: 29.851px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}
+
+.calculator__row input,
+.calculator__row select {
+   max-width: 257px;
+   width: 100%;
+   height: 83px;
+   padding: 0 12px;
+   border-radius: 73px;
+   border: 3px solid #f78c18;
+   background: #fffef1;
+   color: #f78c18;
+   font-family: Rubik;
+   font-size: 29.851px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   appearance: none;
+   text-align: center;
+}
+
+.calculator__value {
+   max-width: 257px;
+   width: 100%;
+   height: 83px;
+   padding: 0 12px;
+   border-radius: 73px;
+   border: 3px solid #f78c18;
+   background: #fffef1;
+   color: #f78c18;
+   font-family: Rubik;
+   font-size: 29.851px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   appearance: none;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+/* Скрыть спиннеры в WebKit-браузерах */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+/* Скрыть спиннеры в Firefox */
+input[type="number"] {
+   -moz-appearance: textfield;
+}
+
+/* обертка для кастом-селекта */
+.custom-select-wrapper {
+   position: relative;
+   width: 257px; /* точно как input */
+   height: 83px;
+}
+
+/* триггер (видимый select) */
+.custom-select-trigger {
+   box-sizing: border-box;
+   width: 100%;
+   height: 100%;
+   padding: 0 38px;
+   border: 3px solid #f78c18;
+   border-radius: 73px;
+   background: #fffef1;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   cursor: pointer;
+   font-family: Rubik, sans-serif;
+   font-size: 29.85px;
+   font-weight: 500;
+   color: #f78c18;
+   user-select: none;
+}
+
+/* убираем прежние border-треугольники */
+.custom-select-trigger .arrow {
+   width: 24px; /* подгоните по размеру */
+   height: 24px;
+}
+
+.custom-select-trigger .arrow img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
+}
+
+/* контейнер с опциями */
+.custom-options {
+   position: absolute;
+   top: calc(100% + 8px);
+   overflow: hidden;
+   left: 0;
+   width: 100%;
+   background: #fffef1;
+   border: 3px solid #f78c18;
+   border-radius: 16px;
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+   opacity: 0;
+   pointer-events: none;
+   transform: translateY(-10px);
+   transition: all 0.3s ease;
+   z-index: 10;
+}
+
+/* когда открыт */
+.custom-select-wrapper.open .custom-options {
+   opacity: 1;
+   pointer-events: auto;
+   transform: translateY(0);
+}
+
+/* каждая опция */
+.custom-option {
+   padding: 16px 24px;
+   font-family: Rubik, sans-serif;
+   font-size: 29.85px;
+   font-weight: 500;
+   color: #f78c18;
+   cursor: pointer;
+   user-select: none;
+}
+
+/* hover-эффект */
+.custom-option:hover {
+   background: #f78c18;
+   color: #fffef1;
+}
+
+/* выбранная опция */
+.custom-option.selected {
+   background: #f78c18;
+   color: #fffef1;
+}
+
+#calculateBtn {
+   color: #fffef1;
+   font-family: Rubik;
+   font-size: 53.19px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+   cursor: pointer;
+   border-radius: 35.637px;
+   background: #f78c18;
+   padding: 25px 57px;
+   transition: all 0.4s ease;
+}
+
+#calculateBtn:hover {
+   opacity: 0.9;
+}
+
+/* join */
+
+.join {
+   margin-top: 150px;
+   padding: 32px;
+   border-radius: 60px;
+   background: #f78c18;
+   display: flex;
+   gap: 120px;
+   margin-bottom: 140px;
+}
+
+.join__title {
+   color: #fffef1;
+   font-family: Rubik;
+   font-size: 131.039px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+}
+
+@media (max-width: 1300px) {
+   .logo {
+      width: 90vw;
+   }
+   .join {
+      gap: 40px;
+   }
+   .networks {
+      gap: 20px;
+   }
+}
+
+@media (max-width: 1050px) {
+   .join {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+   }
+}
+
+@media (max-width: 768px) {
+   .ca {
+      font-size: 20px;
+   }
+   .info__title,
+   .model__subtitle {
+      font-size: 40px;
+   }
+   .info__text {
+      font-size: 20px;
+   }
+   .model__title {
+      font-size: 60px;
+   }
+   .model {
+      padding-top: 40px;
+   }
+   .model__cards {
+      gap: 20px;
+      padding: 14px;
+   }
+   .calculator__block {
+      margin-top: 40px;
+   }
+   .calculator__title {
+      font-size: 60px;
+   }
+   .join__title {
+      font-size: 80px;
+   }
+   .networks img {
+      width: 80px;
+   }
+   .join {
+      margin-bottom: 30px;
+      margin-top: 40px;
+   }
+   .calculator__row label {
+      font-size: 20px;
+   }
+   .calculator__value {
+      font-size: 20px;
+   }
+   .custom-select-trigger {
+      font-size: 20px;
+   }
+   .custom-option {
+      font-size: 20px;
+   }
+   .calculator__row input,
+   .calculator__row select {
+      font-size: 20px;
+   }
+   #calculateBtn {
+      font-size: 23px;
+   }
+}
+
+@media (max-width: 600px) {
+   .info__title,
+   .model__subtitle {
+      font-size: 22px;
+   }
+   .info__title {
+      margin-bottom: 5px;
+   }
+   .ca {
+      margin-bottom: 5px;
+   }
+   .card__image {
+      width: 100px;
+   }
+   .model__card {
+      gap: 17px;
+      width: 100%;
+   }
+   .model__cards {
+      border-radius: 40.235px;
+      background: linear-gradient(180deg, #fff 0%, #f78c18 99.92%);
+   }
+}
+
+@media (max-width: 500px) {
+   .model__text {
+      font-size: 18px;
+      margin-top: 20px;
+   }
+   .card__text {
+      font-size: 18px;
+   }
+   .ca {
+      padding: 5.632px 12.873px;
+      font-size: 12px;
+      border-radius: 8.046px;
+      border: 1.207px solid #f78c18;
+   }
+   .info__text {
+      font-size: 14px;
+   }
+   .model__title {
+      font-size: 28px;
+   }
+   .calculator__title {
+      font-size: 47px;
+   }
+
+   .calculator__row {
+      padding: 24px 0;
+   }
+   .calculator__row label {
+      max-width: 162px;
+      font-size: 16px;
+   }
+   .calculator__value {
+      font-size: 16px;
+   }
+   .custom-select-trigger {
+      font-size: 16px;
+   }
+   .custom-option {
+      font-size: 16px;
+   }
+   .calculator__row input,
+   .calculator__row select {
+      font-size: 16px;
+   }
+   .calculator__value,
+   .custom-select-trigger,
+   .calculator__row input,
+   .calculator__row select {
+      max-width: 140px;
+      width: 100%;
+   }
+   .custom-select-wrapper {
+      width: 140px;
+   }
+   #calculateBtn {
+      color: #fffef1;
+      font-family: Rubik;
+      font-size: 40.695px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      border-radius: 27.266px;
+      padding: 19.086px 43.626px;
+
+      background: #f78c18;
+   }
+   .join {
+      padding: 24px;
+   }
+   .join__title {
+      font-size: 45px;
+   }
+   .networks img {
+      width: 60px;
+   }
+   .calculator {
+      padding: 16px;
+   }
+}
+
+@media (max-width: 360px) {
+   .calculator__value,
+   .custom-select-trigger,
+   .calculator__row input,
+   .calculator__row select {
+      max-width: 125px;
+      width: 100%;
+   }
+   .custom-select-wrapper {
+      width: 125px;
+   }
+}
+
+[data-anim-on-scroll] {
+   transition: all 0.4s ease 0s;
+   opacity: 0;
+}
+
+[data-anim-on-scroll]._animate {
+   opacity: 1;
+}
+
+._right_anim_tr {
+   transform: translateX(200%);
+}
+
+._left_anim_tr {
+   transform: translateX(-200%);
+}
+
+._scale_anim {
+   transform: scale(0);
+}
+
+._right_anim_tr._animate,
+._left_anim_tr._animate {
+   transform: translateX(0%);
+}
+
+._bottom_anim_tr {
+   transform: translateY(200%);
+}
+
+._top_anim_tr {
+   transform: translateY(-200%);
+}
+
+._top_anim_tr._animate,
+._bottom_anim_tr._animate {
+   transform: translateY(0%);
+}
+
+._scale_anim._animate {
+   transform: scale(1);
+}
+
+.anim {
+   animation: anim 3s ease-in-out infinite;
+}
+
+@keyframes anim {
+   0%,
+   100% {
+      transform: scale(1);
+   }
+
+   50% {
+      transform: scale(1.5);
+   }
+}
+
+/*.loop-images .image {
+  position: absolute;
+  z-index: 1;
+  bottom: -100%;
+  animation: moveUp 6s linear infinite;
+}
+
+.loop-images .right .image {
+  right: 0;
+}
+
+.loop-images .right .image-4 {
+  right: -15%;
+  left: auto;
+}
+
+@keyframes moveUp {
+  0% {
+    bottom: -100%;
+  }
+
+  100% {
+    bottom: 100%;
+  }
+}
+
+.loop-images .image-2 {
+  animation-delay: 2s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .image-3 {
+  animation-delay: 3s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .image-4 {
+  animation-delay: 6s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-1 {
+  animation-delay: 0s;
+  animation: moveUp 7s linear infinite;
+}
+
+.loop-images .right .image-2 {
+  animation-delay: 4s;
+  animation: moveUp 9s linear infinite;
+}
+
+.loop-images .right .image-3 {
+  animation-delay: 7s;
+  animation: moveUp 12s linear infinite;
+}
+
+.loop-images .right .image-4 {
+  animation-delay: 10s;
+  animation: moveUp 8s linear infinite;
+}
+
+.card {
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+   animation: none;
+   transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-left {
+   transform: translateX(-200%);
+}
+
+.card-right {
+   transform: translateX(200%);
+}
+
+.card._animate {
+   transform: translateX(0%);
+}
+
+.card:hover, .uniq:hover {
+   transform: translateX(0%) scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq {
+   transform: scale(0);
+   opacity: 0;
+   visibility: hidden; 
+   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.uniq:hover {
+   transform: scale(1.05);
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.uniq._animate {
+   transform: scale(1);
+   opacity: 1; 
+   visibility: visible;
+}*/

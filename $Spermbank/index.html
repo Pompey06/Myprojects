@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>$Spermbank</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="./null.css" />
+      <link rel="stylesheet" href="./style.css" />
+      <link rel="shortcut icon" href="./image/favicon.png" type="image/x-icon" />
+   </head>
+
+   <body>
+      <div class="wrapper bg__wrap">
+         <img src="./image/bg.png" alt="" class="bg hide-450" />
+         <!--<img src="./image/bgmb.png" alt="" class="bg show-450" />-->
+         <div class="content _container">
+            <section class="info">
+               <img data-anim-on-scroll src="./image/logo.png" alt="" class="logo _scale_anim" />
+               <div data-delay="0.3" data-anim-on-scroll data-copy class="ca _left_anim_tr">
+                  0x00000000000000000000000000000000000
+               </div>
+               <h1 data-delay="0.6" data-anim-on-scroll class="info__title _right_anim_tr">
+                  Sperm donors are making up to 40k yearly.
+               </h1>
+               <p data-delay="0.9" data-anim-on-scroll class="info__text _left_anim_tr">
+                  Stop wasting - join the white side to invest in the most stable and growing investment model!
+               </p>
+            </section>
+            <section class="model">
+               <h3 data-delay="1.2" data-anim-on-scroll class="model__subtitle _scale_anim">Proof of Sperm</h3>
+               <h2 data-delay="1.2" data-anim-on-scroll class="model__title _scale_anim">Compound Yield Model</h2>
+               <div data-anim-on-scroll class="model__cards _scale_anim">
+                  <div class="model__card">
+                     <img src="./image/01.png" alt="" class="card__image" />
+                     <div class="card__text">ENDLESSLY PRODUCE</div>
+                  </div>
+                  <div class="model__card">
+                     <img src="./image/02.png" alt="" class="card__image" />
+                     <div class="card__text">EXCHANGE & STAKE</div>
+                  </div>
+                  <div class="model__card">
+                     <img src="./image/03.png" alt="" class="card__image" />
+                     <div class="card__text">COMPOUND INTEREST</div>
+                  </div>
+               </div>
+               <div data-anim-on-scroll class="model__text _left_anim_tr">
+                  The $Spermbank value is always growing due to its stable economic model. Welcome the first ever
+                  tokenized RWA on Solana!
+               </div>
+            </section>
+
+            <section class="calculator__block">
+               <h2 data-anim-on-scroll class="calculator__title _scale_anim">REVENUE CALCULATOR</h2>
+
+               <div class="calculator">
+                  <div class="calculator__body">
+                     <div class="calculator__row">
+                        <label for="weeklyExchanges">NUMBER OF WEEKLY EXCHANGES</label>
+                        <input type="number" id="weeklyExchanges" value="3" min="0" />
+                     </div>
+                     <div class="calculator__row">
+                        <label for="periodSelect">INVESTMENT PERIOD</label>
+
+                        <div class="custom-select-wrapper">
+                           <!-- здесь отображается текущее выбранное значение -->
+                           <div class="custom-select-trigger">
+                              <span id="periodTriggerText">1 Week</span>
+                              <div class="arrow">
+                                 <img src="./image/arrow.svg" alt="▼" />
+                              </div>
+                           </div>
+
+                           <!-- реальный select скрываем, но используем для хранения value -->
+                           <select id="periodSelect" hidden>
+                              <option value="1">1 Week</option>
+                              <option value="4">1 Month</option>
+                              <option value="13">3 Months</option>
+                              <option value="26">6 Months</option>
+                              <option value="52">1 Year</option>
+                           </select>
+
+                           <!-- тут сами пункты меню -->
+                           <div class="custom-options">
+                              <div class="custom-option selected" data-value="1">1 Week</div>
+                              <div class="custom-option" data-value="4">1 Month</div>
+                              <div class="custom-option" data-value="13">3 Months</div>
+                              <div class="custom-option" data-value="26">6 Months</div>
+                              <div class="custom-option" data-value="52">1 Year</div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="calculator__row">
+                        <label>TOTAL INVESTED</label>
+                        <span id="totalInvested" class="calculator__value">$0.00</span>
+                     </div>
+                     <div class="calculator__row">
+                        <label>APPROXIMATE REVENUE WITH COMPOUND INTEREST</label>
+                        <span id="approxRevenue" class="calculator__value">$0.00</span>
+                     </div>
+                  </div>
+               </div>
+               <button data-anim-on-scroll id="calculateBtn" class="_scale_anim">CALCULATE</button>
+            </section>
+            <div data-anim-on-scroll class="join _scale_anim">
+               <h2 class="join__title">JOIN US</h2>
+               <div class="networks">
+                  <a href="#" class="_scale_hover">
+                     <img src="./image/tg.png" alt="" />
+                  </a>
+                  <a href="#" class="_scale_hover">
+                     <img src="./image/x.png" alt="" />
+                  </a>
+                  <a href="#" class="_scale_hover">
+                     <img src="./image/screen.png" alt="" />
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="copied_modal">copied to clipboard</div>
+
+      <!-- <div class="loop-images">
+    <div class="left">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+    <div class="right">
+      <img src="./image/image-1.png" class="image image-1">
+      <img src="./image/image-2.png" class="image image-2">
+      <img src="./image/image-3.png" class="image image-3">
+      <img src="./image/image-4.png" class="image image-4">
+    </div>
+  </div> -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+      <script src="./copy.js"></script>
+      <script src="./main.js"></script>
+      <script src="./animation.js"></script>
+   </body>
+</html>
